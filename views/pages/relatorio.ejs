@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Teste</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th colspan="3">(+) Receitas</th>
+        </thead>
+        <tbody>
+            <% for (conta of relatorio.contas) {%>
+                <% if (conta.despesas == false) { %>
+                <tr>
+                    <td><%= conta.nomeConta %></td>
+                    <td><%= conta.resultado %></td>
+                    <td><%= conta.tpConta %></td>
+                </tr>
+                <% } %>
+            <% }%>
+        </tbody>
+    </table>
+
+    <table style="margin: 16px 0px 0px 0px">
+        <thead>
+            <th colspan="3">(-) Despesas</th>
+        </thead>
+        <tbody>
+            <% for (conta of relatorio.contas) {%>
+                <% if (conta.despesas == true) { %>
+                <tr>
+                    <td><%= conta.nomeConta %></td>
+                    <td><%= conta.resultado %></td>
+                    <td><%= conta.tpConta %></td>
+                </tr>
+                <% } %>
+            <% }%>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

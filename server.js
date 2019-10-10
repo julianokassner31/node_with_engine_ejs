@@ -38,6 +38,33 @@ app.get('/about', (req, res) => {
     })
 })
 
+app.get('/relatorio', (req, res) => {
+    var relatorio = {
+        vlDebito : 1500,
+        vlCredito : 900,
+        contaPrincipal: "2.1.1.1 - Principal",
+        contas: [
+            {
+                nomeConta: "3.1.4.1 - Lancamento",
+                despesas: false,
+                tpConta: "D",
+                resultado: 1500,
+            },
+
+            {
+                nomeConta: "4.4.4.1 - Desesas",
+                tpConta: "D",
+                despesas: true,
+                resultado: 3000,
+            }
+        ]
+    }
+
+    res.render('pages/relatorio', {
+        relatorio: relatorio
+    })
+})
+
 app.get('/contact', (req, res) => {
     res.render('pages/contact')
 })
