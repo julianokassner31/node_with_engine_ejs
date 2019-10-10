@@ -42,7 +42,10 @@ app.get('/relatorio', (req, res) => {
     var relatorio = {
         vlDebito : 1500,
         vlCredito : 900,
-        contaPrincipal: "2.1.1.1 - Principal",
+        contaPrincipal:{
+            nome: "2.1.1.1 - Principal",
+            tpConta: 'D'
+        }, 
         contas: [
             {
                 nomeConta: "3.1.4.1 - Lancamento",

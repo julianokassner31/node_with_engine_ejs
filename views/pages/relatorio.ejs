@@ -40,6 +40,13 @@
             <% }%>
         </tbody>
     </table>
+    <div>
+        <h3>(=) Resultados</h3>
+        <span> Crédito: <%= relatorio.vlCredito %></span><br>
+        <span> Débito: <%= relatorio.vlDebito %></span><br>
+        <span>Resultado = <%= relatorio.vlCredito - relatorio.vlDebito %></span><br>
+        <span><%= relatorio.contaPrincipal.nome%> - <%=relatorio.contaPrincipal.tpConta%></span>
+    </div>
 
 </body>
 
